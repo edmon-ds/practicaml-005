@@ -1,0 +1,6 @@
+StudentID,Age,Gender,Ethnicity,ParentalEducation,StudyTimeWeekly,Absences,Tutoring,ParentalSupport,Extracurricular,Sports,Music,Volunteering,GPA,GradeClass
+1001,17,Female,Caucasian,Some College,19.833723068237305,7,True,Moderate,False,False,True,False,2.9291956424713135,C
+1002,18,Male,Caucasian,High School,15.408756256103516,0,False,Low,False,False,False,False,3.042914867401123,B
+1003,15,Male,Asian,Bachelor's,4.210569858551025,26,False,Moderate,False,False,False,False,0.11260225623846054,F
+1004,17,Female,Caucasian,Bachelor's,10.028829574584961,14,False,High,True,False,False,False,2.054218053817749,D
+1005,17,Female,Caucasian,Some College,4.672495365142822,17,True,High,False,False,False,False,1.2880611419677734,F

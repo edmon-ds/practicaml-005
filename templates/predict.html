@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Information Form</title>
+</head>
+<body>
+    <h2>Student Information Form</h2>
+    <form action="{{url_for('predict_datapoint')}}" method="post">
+        
+        <!-- Age -->
+        <label for="age">Age:</label>
+        <input type="number" id="age" name="Age" min="15" max="18" required><br><br>
+        
+        <!-- Gender -->
+        <label for="gender">Gender:</label>
+        <select id="gender" name="Gender" required>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+        </select><br><br>
+        
+        <!-- Ethnicity -->
+        <label for="ethnicity">Ethnicity:</label>
+        <select id="ethnicity" name="Ethnicity" required>
+            <option value="Caucasian">Caucasian</option>
+            <option value="Asian">Asian</option>
+            <option value="African American">African American</option>
+            <option value="Other">Other</option>
+        </select><br><br>
+        
+        <!-- Parental Education -->
+        <label for="parental_education">Parental Education:</label>
+        <select id="parental_education" name="ParentalEducation" required>
+            <option value="None">None</option>
+            <option value="High School">High School</option>
+            <option value="Some College">Some College</option>
+            <option value="Bachelor's">Bachelor's</option>
+            <option value="Higher">Higher</option>
+        </select><br><br>
+        
+        <!-- Study Time Weekly -->
+        <label for="study_time_weekly">Study Time Weekly (hours):</label>
+        <input type="number" id="study_time_weekly" name="StudyTimeWeekly" min="0" max="20" step="0.1" required><br><br>
+        
+        <!-- Absences -->
+        <label for="absences">Absences:</label>
+        <input type="number" id="absences" name="Absences" min="0" max="30" required><br><br>
+        
+        <!-- Tutoring -->
+        <label for="tutoring">Tutoring:</label>
+        <select id="tutoring" name="Tutoring" required>
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select><br><br>
+        
+        <!-- Parental Support -->
+        <label for="parental_support">Parental Support:</label>
+        <select id="parental_support" name="ParentalSupport" required>
+            <option value="None">None</option>
+            <option value="Low">Low</option>
+            <option value="Moderate">Moderate</option>
+            <option value="High">High</option>
+            <option value="Very High">Very High</option>
+        </select><br><br>
+        
+        <!-- Extracurricular -->
+        <label for="extracurricular">Extracurricular Activities:</label>
+        <select id="extracurricular" name="Extracurricular" required>
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select><br><br>
+        
+        <!-- Sports -->
+        <label for="sports">Sports Participation:</label>
+        <select id="sports" name="Sports" required>
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select><br><br>
+        
+        <!-- Music -->
+        <label for="music">Music Participation:</label>
+        <select id="music" name="Music" required>
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select><br><br>
+        
+        <!-- Volunteering -->
+        <label for="volunteering">Volunteering:</label>
+        <select id="volunteering" name="Volunteering" required>
+            <option value="True">Yes</option>
+            <option value="False">No</option>
+        </select><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <´<p>the prediction is results {{results}}</p>
+</body>
+</html>
