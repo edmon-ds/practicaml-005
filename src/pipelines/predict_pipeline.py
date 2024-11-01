@@ -20,6 +20,7 @@ class CustomData():
             "Music": [int(bool(Music))], 
             "Volunteering":[int(bool(Volunteering))] 
         })
+        
     def get_data_as_dataframe(self):
         return self.user_data
 

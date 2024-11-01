@@ -28,38 +28,12 @@ class DataTransformationConfig():
     input_preprocessor_path = os.path.join("artifacts", "input_preprocessor.pkl")
     output_encoder_path = os.path.join("artifacts", "output_encoder.pkl")
 
-#clase para recuperar los nombres
-class RestoreNameTransformer(BaseEstimator , TransformerMixin):
-    def __init__(self , features_names):
-        self.features_names = features_names
-    def fit(self , X ):
-        return self
-    def transform(self, X):
-        return pd.DataFrame(X , columns= self.features_names)
-
-#clase para hacer feature engineering 
-class FeatureEngineeringTransformer(BaseEstimator , TransformerMixin):        
-    def __init__(self):
-        pass
-    def fit(self , X , y = None ):
-        pass
-    def transform(self , X):
-        '''se crean las feature nuevas'''
-        X["extra_activities_studies"] = X["Tutoring"] + X["Extracurricular"]
-        X["extra_activities_no_studies"] = X["Sports"] + X["Music"] + X["Volunteering"]
-        X = X.drop(columns = ["Tutoring" , "Extracurricular" , "Sports" , "Music" , "Volunteering"]) 
-        return X
-    def fit_transform(self, X, y = None):
-        '''se crean las feature nuevas'''
-        X["extra_activities_studies"] = X["Tutoring"] + X["Extracurricular"]
-        X["extra_activities_no_studies"] = X["Sports"] + X["Music"] + X["Volunteering"]
-        X = X.drop(columns = ["Tutoring" , "Extracurricular" , "Sports" , "Music" , "Volunteering"]) 
-        return X
 
 
 class DataTransformation():
     def __init__(self  ):
         self.dataconfig = DataTransformationConfig()
+        
     def get_preprocessor(self):
 
         numerical_columns = ['Age', 'StudyTimeWeekly', 'Absences']
@@ -190,3 +164,35 @@ class DataTransformation():
              
         except Exception as e:
             raise CustomException(e , sys)
+        
+
+
+
+
+#clase para recuperar los nombres
+class RestoreNameTransformer(BaseEstimator , TransformerMixin):
+    def __init__(self , features_names):
+        self.features_names = features_names
+    def fit(self , X ):
+        return self
+    def transform(self, X):
+        return pd.DataFrame(X , columns= self.features_names)
+
+#clase para hacer feature engineering 
+class FeatureEngineeringTransformer(BaseEstimator , TransformerMixin):        
+    def __init__(self):
+        pass
+    def fit(self , X , y = None ):
+        pass
+    def transform(self , X):
+        '''se crean las feature nuevas'''
+        X["extra_activities_studies"] = X["Tutoring"] + X["Extracurricular"]
+        X["extra_activities_no_studies"] = X["Sports"] + X["Music"] + X["Volunteering"]
+        X = X.drop(columns = ["Tutoring" , "Extracurricular" , "Sports" , "Music" , "Volunteering"]) 
+        return X
+    def fit_transform(self, X, y = None):
+        '''se crean las feature nuevas'''
+        X["extra_activities_studies"] = X["Tutoring"] + X["Extracurricular"]
+        X["extra_activities_no_studies"] = X["Sports"] + X["Music"] + X["Volunteering"]
+        X = X.drop(columns = ["Tutoring" , "Extracurricular" , "Sports" , "Music" , "Volunteering"]) 
+        return X

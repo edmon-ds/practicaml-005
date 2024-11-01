@@ -61,6 +61,7 @@ class ModelTrainer():
                                     }
         self.report =  None
         self.threshold = 0.6
+        
     def show_report(self):
         print(self.report)
     
@@ -106,6 +107,7 @@ class ModelTrainer():
             X_train , y_train , X_test , y_test = (
                 train_array[:, : -1] ,  train_array[:, -1] ,test_array[: , :-1]  ,test_array[: , -1]  
                             )
+            
             model_report_df:pd.DataFrame = self.evaluate_model(X_train , y_train , X_test , y_test)
             
             best_model_row = model_report_df.loc[model_report_df["accuracy"].idxmax()]
@@ -117,7 +119,7 @@ class ModelTrainer():
                 raise ValueError("best model couldn't be found")
             
             logging.info("best model found")
-            save_object(file_path= self.dataconfig.model_path , obj=best_model)
+            save_object(file_path = self.dataconfig.model_path , obj=best_model)
             
             return (best_model_name , best_model_score , best_model )
         except Exception as e:  

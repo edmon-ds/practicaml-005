@@ -20,3 +20,4 @@ eran como 3000 filas, y eso es muy poco para alcanzar un rendimiento bueno con l
 Conclusiones 
 - es importante tener una gran cantidad de datos etiquetados para cada posible clase, 
 - es importante tener una gran cantidad de datos en general para alcanzar un buen rendimiento con los modelos
+- considero que el proyecto fue un fracaso debido a la escasez de datos que habia
